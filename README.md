@@ -6,7 +6,7 @@ $ stow .
 
 ## Font
 
-* The prefered fontface to use is `Iosevka SS02 Term`
+* The preferred fontface to use is `Iosevka SS02 Term`
 ```console
 $ ./install-font.sh
 ```
