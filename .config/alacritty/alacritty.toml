@@ -1,0 +1,32 @@
+[font]
+size = 22
+
+[font.bold]
+family = "Iosevka Term SS02"
+style = "Bold"
+
+[font.bold_italic]
+family = "Iosevka Term SS02"
+style = "Bold Italic"
+
+[font.italic]
+family = "Iosevka Term SS02"
+style = "Italic"
+
+[font.normal]
+family = "Iosevka Term SS02"
+style = "Regular"
+
+[font.offset]
+x = 0
+
+[env]
+TERM = "xterm-256color"
+
+[colors]
+
+[colors.primary]
+background = "#181818"
+
+[colors.normal]
+green = "#00aa44"
