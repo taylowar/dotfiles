@@ -142,11 +142,15 @@ function cls() {
 }
 # swap caps ctrl
 setxkbmap -option ctrl:swapcaps
+
 export XDG_CONFIG_HOME=/home/tilc/.config
+
 NVIM_SRC_PATH="$HOME/software/external/nvim-linux64/bin"
 export PATH="$PATH":"$NVIM_SRC_PATH"
+
 ARDUINO_SRC_PATH="$HOME/software/external/arduino-cli"
 export PATH="$PATH":"$ARDUINO_SRC_PATH":"$HOME/software/lsp/lua-language-server/bin"
+
 export PATH="$PATH":"/usr/local/share/fpc/bin"
 
 # bun completions
