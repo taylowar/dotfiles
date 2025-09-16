@@ -2,20 +2,20 @@
 size = 22
 
 [font.bold]
-family = "Iosevka Term SS02"
+family = "Iosevka Term SS02 Semibold"
 style = "Bold"
 
 [font.bold_italic]
-family = "Iosevka Term SS02"
+family = "Iosevka Term SS02 Semibold"
 style = "Bold Italic"
 
 [font.italic]
-family = "Iosevka Term SS02"
+family = "Iosevka Term SS02 Semibold"
 style = "Italic"
 
 [font.normal]
-family = "Iosevka Term SS02"
-style = "Regular"
+family = "Iosevka Term SS02 Semibold"
+style = "Semibold"
 
 [font.offset]
 x = 0
