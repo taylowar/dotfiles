@@ -26,6 +26,7 @@ $ ./install-font.sh
 
 ## Editor - NeoVim
 * Can you call yourself a real programmer if you don't use Vim?
+* settings: `.config/nvim`
 * source: https://github.com/neovim/neovim
 
 ## Additional programs
