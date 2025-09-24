@@ -24,6 +24,10 @@ $ ./install-font.sh
 * settings: `.config/i3/`
 * source: https://i3wm.org/
 
+## Editor - NeoVim
+* Can you call yourself a real programmer if you don't use Vim?
+* source: https://github.com/neovim/neovim
+
 ## Additional programs
 
 * **GF2**
@@ -39,6 +43,7 @@ Essentially a debugger for C, CPP and alike.
 - `stow` - https://www.gnu.org/software/stow/
 - `Alacritty` - https://alacritty.org/
 - `i3wm` - https://i3wm.org/
+- `neovim` - https://github.com/neovim/neovim
 - `gf2` - https://github.com/nakst/gf
 - `Iosevka fonts` - https://github.com/be5invis/Iosevka/releases
 - `brightnessctl` - https://github.com/Hummer12007/brightnessctl 
