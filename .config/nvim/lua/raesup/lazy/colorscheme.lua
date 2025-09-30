@@ -1,7 +1,20 @@
 
 function Palette_C()
-    vim.api.nvim_set_hl(0, '@lsp.type.function.c', { fg='#ffffff' })
-    vim.api.nvim_set_hl(0, '@type.builtin', { fg='#887799' })
+    local WHITE_FG = '#fefefe'
+    local YELLOW_FG = '#FFFF00'
+    vim.api.nvim_set_hl(0, '@lsp.type.function.c', { fg=WHITE_FG })
+    vim.api.nvim_set_hl(0, '@lsp.typemod.class.globalScope.c', { fg=WHITE_FG })
+    vim.api.nvim_set_hl(0, '@lsp.typemod.function.globalScope.c', { fg=WHITE_FG })
+    vim.api.nvim_set_hl(0, '@lsp.typemod.parameter.functionScope.c', { fg=WHITE_FG })
+    vim.api.nvim_set_hl(0, '@lsp.typemod.variable.functionScope.c', { fg=WHITE_FG })
+    vim.api.nvim_set_hl(0, '@lsp.typemod.enumMember.fileScope.c', { fg=WHITE_FG })
+    vim.api.nvim_set_hl(0, '@number.c', { fg=WHITE_FG })
+    vim.api.nvim_set_hl(0, '@keyword.repeat.c', { fg=YELLOW_FG })
+    vim.api.nvim_set_hl(0, '@keyword.conditional.c', { fg=YELLOW_FG })
+    vim.api.nvim_set_hl(0, '@keyword.return.c', { fg=YELLOW_FG })
+    vim.api.nvim_set_hl(0, '@keyword.operator.c', { fg=YELLOW_FG })
+    vim.api.nvim_set_hl(0, '@type.builtin.c', { fg='#9999AA' })
+    vim.api.nvim_set_hl(0, '@string.c', { fg="#55ff55" })
 end
 
 function ColorMyPencils(color)
