@@ -1,7 +1,7 @@
 
 function Palette_C()
     local WHITE_FG = '#fefefe'
-    local YELLOW_FG = '#FFFF00'
+    local YELLOW_FG = '#FFDA03'
     vim.api.nvim_set_hl(0, '@lsp.type.function.c', { fg=WHITE_FG })
     vim.api.nvim_set_hl(0, '@lsp.typemod.class.globalScope.c', { fg=WHITE_FG })
     vim.api.nvim_set_hl(0, '@lsp.typemod.function.globalScope.c', { fg=WHITE_FG })
