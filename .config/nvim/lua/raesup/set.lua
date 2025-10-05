@@ -10,7 +10,7 @@ vim.opt.shiftwidth = 4 -- Number of spaces inserted when indenting
 
 vim.opt.smartindent = true
 
-vim.opt.wrap = false
+vim.opt.wrap = true
 
 vim.opt.swapfile = false
 vim.opt.backup = false
@@ -31,5 +31,6 @@ vim.opt.updatetime = 50
 --vim.opt.colorcolumn = "80"
 
 vim.opt.colorcolumn = "210"
---vim.opt.list = true
---vim.opt.listchars = { leadmultispace = ".", multispace = "." }
+vim.opt.list = true
+vim.opt.listchars = { leadmultispace = ".", multispace = "." }
+vim.api.nvim_set_hl(0, 'NonText', { fg="#222222" })
