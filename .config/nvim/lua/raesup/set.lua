@@ -32,5 +32,5 @@ vim.opt.updatetime = 50
 
 vim.opt.colorcolumn = "210"
 vim.opt.list = true
-vim.opt.listchars = { leadmultispace = ".", multispace = "." }
+vim.opt.listchars = { leadmultispace = ".", multispace = ".", tab="__" }
 vim.api.nvim_set_hl(0, 'NonText', { fg="#222222" })
