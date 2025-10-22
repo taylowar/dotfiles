@@ -37,6 +37,14 @@ Essentially a debugger for C, CPP and alike.
 - settings: `.config/gf2_config.ini`
 - source: https://github.com/nakst/gf
 
+* **RipGrep (rg)**
+* line-oriented search tool that recursively searches the current directory for a regex pattern
+* source: https://github.com/BurntSushi/ripgrep
+* install:
+```console
+$ sudo apt-get install ripgrep
+```
+
 ---
 
 ## References
