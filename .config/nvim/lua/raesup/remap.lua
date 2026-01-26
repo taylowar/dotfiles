@@ -24,3 +24,45 @@ vim.keymap.set('n', '<leader>s', ':%s/\\<<C-r><C-w>\\>/')
 
 -- for jummping to symbol definition
 vim.keymap.set('n', 'gd', vim.lsp.buf.declaration)
+
+local switch_the_truth = function ()
+    local row, col = unpack(vim.api.nvim_win_get_cursor(0))
+    local line = vim.fn.getline('.')
+    local cdx = 0
+    -- find the starting position of the word
+    while col-cdx > 0 and vim.fn.getline(row):sub(col-cdx, col-cdx) ~= " " do
+        cdx = cdx+1
+    end
+    -- move the cursor to the beggining of the word
+    vim.api.nvim_win_set_cursor(0, {row, col-cdx})
+    col = col-cdx
+    cdx = 1
+    -- determine if the word is `true` or `false` also 
+    local is_false = false
+    local is_true = false
+    while (vim.fn.getline(row):sub(col+cdx, col+cdx) ~= " ") and cdx < #line do
+        if (vim.fn.getline(row):sub(col+1, col+cdx) == "false") then
+            is_false = true
+            break
+        end
+        if (vim.fn.getline(row):sub(col+1, col+cdx) == "true") then
+            is_true = true
+            break
+        end
+        cdx = cdx+1
+    end
+    if (is_false) then
+        vim.api.nvim_buf_set_text(0, row-1, col, row-1, col+cdx, { "true" })
+        return
+    end
+    if (is_true) then
+        vim.api.nvim_buf_set_text(0, row-1, col, row-1, col+cdx, { "false" })
+        return
+    end
+    print(
+        string.format("'%s'", vim.fn.getline(row):sub(col+1, col+cdx)),
+        "does not express a 'boolean'"
+    )
+end
+
+vim.keymap.set('n', '<leader>sb', switch_the_truth)
