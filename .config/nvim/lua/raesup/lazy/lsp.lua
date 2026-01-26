@@ -2,8 +2,9 @@ return {
     "neovim/nvim-lspconfig",
     dependencies = {
         "stevearc/conform.nvim",
-        "williamboman/mason.nvim",
-        "williamboman/mason-lspconfig.nvim",
+        { 'mason-org/mason.nvim', opts = {} },
+        'mason-org/mason-lspconfig.nvim',
+        'WhoIsSethDaniel/mason-tool-installer.nvim',
         "hrsh7th/cmp-nvim-lsp",
         "hrsh7th/cmp-buffer",
         "hrsh7th/cmp-path",
@@ -25,62 +26,56 @@ return {
             "force",
             {},
             vim.lsp.protocol.make_client_capabilities(),
-            cmp_lsp.default_capabilities())
+            cmp_lsp.default_capabilities()
+        )
 
         require("fidget").setup({})
         require("mason").setup()
-        require("mason-lspconfig").setup({
-            ensure_installed = {
-                "clangd",
-                "lua_ls",
-            },
-            handlers = {
-                function(server_name) -- default handler (optional)
-                    require("lspconfig")[server_name].setup {
-                        capabilities = capabilities
-                    }
-                end,
 
-                zls = function()
-                    local lspconfig = require("lspconfig")
-                    lspconfig.zls.setup({
-                        root_dir = lspconfig.util.root_pattern(".git", "build.zig", "zls.json"),
-                        settings = {
-                            zls = {
-                                enable_inlay_hints = true,
-                                enable_snippets = true,
-                                warn_style = true,
-                            },
+        local servers = {
+            lua_ls = {
+                -- cmd = { ... },
+                -- filetypes = { ... },
+                capabilities = capabilities,
+                settings = {
+                    Lua = {
+                        runtime = { version = "LuaJIT" },
+                        completion = {
+                            callSnippet = 'Replace',
                         },
-                    })
-                    vim.g.zig_fmt_parse_errors = 0
-                    vim.g.zig_fmt_autosave = 0
-
-                end,
-                ["lua_ls"] = function()
-                    local lspconfig = require("lspconfig")
-                    lspconfig.lua_ls.setup {
-                        capabilities = capabilities,
-                        settings = {
-                            Lua = {
-                                diagnostics = {
-                                    globals = { "vim" }
-                                },
-                                format = {
-                                    enable = true,
-                                    -- Put format options here
-                                    -- NOTE: the value should be STRING!!
-                                    defaultConfig = {
-                                        indent_style = "space",
-                                        indent_size = "2",
-                                    }
-                                },
+                        workspace = {
+                            library = vim.api.nvim_get_runtime_file("", true),
+                            checkThirdParty = false,
+                        },
+                        format = {
+                            enable = true,
+                            -- Put format options here
+                            -- NOTE: the value should be STRING!!
+                            defaultConfig = {
+                                indent_style = "space",
+                                indent_size = "2",
                             }
-                        }
-                    }
-                end,
+                        },
+                        -- You can toggle below to ignore Lua_LS's noisy `missing-fields` warnings
+                        -- diagnostics = { globals = { 'vim' } },
+                    },
+                },
             }
+        }
+
+        local ensure_installed = vim.tbl_keys(servers or {})
+        vim.list_extend(ensure_installed, {
+            'stylua', -- Used to format Lua code
         })
+        require('mason-tool-installer').setup { ensure_installed = ensure_installed }
+        require("mason-lspconfig").setup({
+            ensure_installed = {},
+            automatic_installation = false,
+        })
+        vim.lsp.config(
+            "lua_ls",
+            servers["lua_ls"]
+        )
 
         local cmp_select = { behavior = cmp.SelectBehavior.Select }
 
