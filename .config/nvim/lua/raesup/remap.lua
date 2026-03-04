@@ -23,7 +23,7 @@ vim.keymap.set('n', '<leader>Y', '"+Y')
 vim.keymap.set('n', '<leader>s', ':%s/\\<<C-r><C-w>\\>/')
 
 -- for jummping to symbol definition
-vim.keymap.set('n', 'gd', vim.lsp.buf.declaration)
+vim.keymap.set('n', 'gd', vim.lsp.buf.definition)
 
 local switch_the_truth = function ()
     local row, col = unpack(vim.api.nvim_win_get_cursor(0))
