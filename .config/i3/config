@@ -165,3 +165,8 @@ bar {
 exec_always feh --bg-scale ~/Pictures/wallpapers/sexy_lady.jpg
 focus_follows_mouse no
 hide_edge_borders both
+
+############################################################### 
+#                     custom scripts                          # 
+############################################################### 
+exec --no-startup-id i3-battery-popup -n -D -L 20 -l 10
