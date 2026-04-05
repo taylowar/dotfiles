@@ -3,10 +3,10 @@ vim.opt.guicursor = ""
 vim.opt.number = true
 vim.opt.relativenumber = true
 
-vim.opt.tabstop = 4 -- A TAB character looks like 4 spaces
+vim.opt.tabstop = 4      -- A TAB character looks like 4 spaces
 vim.opt.expandtab = true -- Pressing the TAB key will insert spaces instead of a TAB character
-vim.opt.softtabstop = 4 -- Number of spaces inserted instead of a TAB character
-vim.opt.shiftwidth = 4 -- Number of spaces inserted when indenting
+vim.opt.softtabstop = 4  -- Number of spaces inserted instead of a TAB character
+vim.opt.shiftwidth = 4   -- Number of spaces inserted when indenting
 
 vim.opt.smartindent = true
 
@@ -30,7 +30,7 @@ vim.opt.updatetime = 50
 
 --vim.opt.colorcolumn = "80"
 
-vim.opt.colorcolumn = "210"
+vim.opt.colorcolumn = "190"
 vim.opt.list = true
 vim.opt.listchars = { leadmultispace = ".", multispace = ".", tab="__" }
 vim.api.nvim_set_hl(0, 'NonText', { fg="#222222" })
