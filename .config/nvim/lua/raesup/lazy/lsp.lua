@@ -72,8 +72,8 @@ return {
                 enabled = true,
                 maxLineLength = 100,
               },
-              pyflakes = { enabled = true },
-              mccabe = { enabled = true },
+              -- pyflakes = { enabled = true },
+              -- mccabe = { enabled = true },
               -- You can add more plugins like 'pylsp_mypy', 'pylsp_rope', etc.
               -- They must be installed separately via pip.
               -- Example:
@@ -81,8 +81,8 @@ return {
               -- pylsp_rope = { enabled = true },
               -- Formatting: pylsp can use autopep8, yapf, or black via plugin.
               -- We'll use conform.nvim for formatting, so disable pylsp's formatting.
-              autopep8 = { enabled = false },
-              yapf = { enabled = false },
+              -- autopep8 = { enabled = false },
+              -- yapf = { enabled = false },
             },
           },
         },
